@@ -18,5 +18,10 @@ set fzf_history_opts --with-nth=4..
 
 # https://github.com/jdx/rtx
 rtx activate fish | source
+rtx completion fish | source
+rtx hook-env | source # needed to update path to access rtx plugins in this script
 # https://github.com/ajeetdsouza/zoxide
 zoxide init fish | source
+# https://github.com/twpayne/chezmoi
+chezmoi completion fish | source
+
