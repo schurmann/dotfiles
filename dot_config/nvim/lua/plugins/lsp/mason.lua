@@ -13,6 +13,7 @@ return {
         "astro",
         "html",
         "lua_ls",
+        "svelte",
         "tsserver",
       },
       automatic_installation = true,
