@@ -4,3 +4,5 @@
 	rbc = rebase --continue
 [rerere]
 	enabled = true
+[user]
+	name = Jonathan Schurmann
