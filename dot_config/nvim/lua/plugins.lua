@@ -14,6 +14,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
+    require("plugins.gitsigns"),
+    require("plugins.luasnip"),
     require("plugins.lsp.lspconfig"),
     require("plugins.lsp.mason"),
     require("plugins.luasnip"),
