@@ -1,0 +1,9 @@
+[tools]
+python = "3.11"
+go = "1.21"
+k9s = "latest"
+kubectl = "1.28"
+lazygit = "latest"
+neovim = "stable"
+fzf = "latest"
+chezmoi = "latest"

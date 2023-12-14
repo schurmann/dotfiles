@@ -1,0 +1,6 @@
+[alias]
+	rbi = rebase --interactive
+	st = status
+	rbc = rebase --continue
+[rerere]
+	enabled = true
