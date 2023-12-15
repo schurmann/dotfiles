@@ -35,3 +35,5 @@ vim.opt.undofile = true
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.opt.gdefault = true --enables /g flag by default with :substitute

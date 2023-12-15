@@ -15,10 +15,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     require("plugins.gitsigns"),
-    require("plugins.luasnip"),
+    require("plugins.indent-blankline"),
     require("plugins.lsp.lspconfig"),
     require("plugins.lsp.mason"),
     require("plugins.luasnip"),
+    require("plugins.nvim-autopairs"),
     require("plugins.nvim-cmp"),
     require("plugins.nvim-tree"),
     require("plugins.nvim-web-devicons"),
