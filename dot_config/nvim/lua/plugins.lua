@@ -27,6 +27,7 @@ require("lazy").setup({
     require("plugins.telescope"),
     require("plugins.tokyonight-theme"),
     require("plugins.treesitter"),
+    require("plugins.trouble"),
     require("plugins.which-key"),
   },
 })

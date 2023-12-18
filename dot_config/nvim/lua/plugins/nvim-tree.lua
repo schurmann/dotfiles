@@ -15,6 +15,7 @@ return {
 
       api.config.mappings.default_on_attach(bufnr)
       vim.keymap.set("n", "v", api.node.open.vertical, opts "vertical split")
+      vim.keymap.del('n', '<C-e>', { buffer = bufnr }) -- remove mapping since it is used by telescope
     end
 
     require("nvim-tree").setup({
@@ -24,6 +25,9 @@ return {
         update_root = true,
       },
       on_attach = on_attach,
+      view = {
+        width = 40,
+      },
     })
     r.noremap("n", "<leader>e", api.tree.toggle, "toggle explorer")
 

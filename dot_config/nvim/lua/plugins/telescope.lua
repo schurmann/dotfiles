@@ -5,9 +5,11 @@ return {
     'nvim-lua/plenary.nvim',
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-telescope/telescope-file-browser.nvim",
+    "benfowler/telescope-luasnip.nvim", -- :Telescope luasnip to see available snippes for filetype
   },
   config = function(_, opts)
     local telescope = require("telescope")
+    require('telescope').load_extension('luasnip')
     local previewers = require("telescope.previewers")
     local sorters = require("telescope.sorters")
     local actions = require("telescope.actions")

@@ -15,7 +15,7 @@ return {
       r.noremap("n", "gD", vim.lsp.buf.declaration, "show usages")
       r.noremap("n", "<F6>", vim.lsp.buf.rename, "rename")
       r.noremap("n", "gs", vim.lsp.buf.signature_help, "show signature")
-      r.noremap("n", "gf", vim.lsp.buf.format, "show signature")
+      r.noremap("n", "gf", vim.lsp.buf.format, "format code")
       r.noremap("n", "<A-CR>", vim.lsp.buf.code_action, "quick fix")
       r.noremap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "show definition")
       r.noremap("n", "<F2>", vim.diagnostic.goto_next, "next diagnostic")
@@ -30,6 +30,11 @@ return {
     })
 
     lspconfig["html"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["jsonls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
@@ -51,6 +56,18 @@ return {
     })
 
     lspconfig["svelte"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- needs .sqllsrc.json to detect root dir
+    -- https://github.com/joe-re/sql-language-server#project-configuration-file
+    lspconfig["sqlls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["tailwindcss"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })

@@ -12,8 +12,11 @@ return {
       ensure_installed = {
         "astro",
         "html",
+        "jsonls",
         "lua_ls",
         "svelte",
+        "sqlls",
+        "tailwindcss",
         "tsserver",
       },
       automatic_installation = true,
