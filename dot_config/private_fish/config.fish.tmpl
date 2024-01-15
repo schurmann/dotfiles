@@ -11,7 +11,9 @@ alias fd=fdfind
 alias cat={{ .batBinary }}
 alias kc=kubectl
 alias lzd=lazydocker
-
+alias kctx="kubectl ctx"
+alias kns="kubectl ns"
+alias dc="docker compose"
 {{ if eq .chezmoi.os "darwin" }}
 set -xg DOCKER_HOST "unix://$HOME/.colima/default/docker.sock"
 set -xg TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE /var/run/docker.sock
@@ -20,6 +22,7 @@ complete --command aws --no-files --arguments '(begin; set --local --export COMP
 {{ end }}
 
 fish_add_path ~/.bin
+fish_add_path ~/.krew/bin
 
 ## Config fzf fish plugin https://github.com/PatrickF1/fzf.fish
 # disable timestamp column in search history
