@@ -15,11 +15,12 @@ alias kctx="kubectl ctx"
 alias kns="kubectl ns"
 alias dc="docker compose"
 {{ if eq .chezmoi.os "darwin" }}
-set -xg DOCKER_HOST "unix://$HOME/.colima/default/docker.sock"
-set -xg TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE /var/run/docker.sock
-# aws autocomplete https://github.com/aws/aws-cli/issues/1079
-complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
-fish_add_path /opt/homebrew/sbin
+  set -xg DOCKER_HOST "unix://$HOME/.colima/default/docker.sock"
+  set -xg TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE /var/run/docker.sock
+  # aws autocomplete https://github.com/aws/aws-cli/issues/1079
+  complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
+  fish_add_path /opt/homebrew/sbin
+{{ else if eq .chezmoi.os "linux" }}
 {{ end }}
 
 fish_add_path ~/.bin
