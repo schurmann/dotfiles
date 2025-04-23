@@ -10,8 +10,8 @@ alias lz=lazygit
 alias cat={{ .batBinary }}
 alias kc=kubectl
 alias lzd=lazydocker
-alias kctx="kubectl ctx"
-alias kns="kubectl ns"
+alias kctx="kubie ctx"
+alias kns="kubie ns"
 alias dc="docker compose"
 {{ if eq .chezmoi.os "darwin" }}
   set -xg DOCKER_HOST "unix://$HOME/.colima/default/docker.sock"
@@ -19,6 +19,7 @@ alias dc="docker compose"
   # aws autocomplete https://github.com/aws/aws-cli/issues/1079
   complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
   fish_add_path /opt/homebrew/sbin
+  fish_add_path /opt/homebrew/opt/postgresql@16/bin
   set -xg GO_ROOT ~/go
 {{ else if eq .chezmoi.os "linux" }}
 {{ end }}
