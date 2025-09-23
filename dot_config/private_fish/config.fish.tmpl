@@ -4,6 +4,7 @@ end
 
 set -xg SUDO_EDITOR nvim
 set -xg VISUAL nvim
+set -xg KUBE_EDITOR nvim
 
 alias k=k9s
 alias v=nvim
@@ -23,11 +24,17 @@ alias dc="docker compose"
   fish_add_path /opt/homebrew/opt/postgresql@16/bin
   set -xg GO_ROOT ~/go
 {{ else if eq .chezmoi.os "linux" }}
+if uwsm check may-start
+  exec uwsm start hyprland-uwsm.desktop
+end
 {{ end }}
 
 fish_add_path ~/.bin
 fish_add_path ~/.krew/bin
 fish_add_path ~/.cargo/bin
+
+# https://github.com/fish-shell/fish-shell/issues/11251
+set fish_color_command blue
 
 ## Config fzf fish plugin https://github.com/PatrickF1/fzf.fish
 # disable timestamp column in search history
@@ -35,8 +42,11 @@ set fzf_history_opts --with-nth=4..
 
 # https://github.com/jdx/mise
 mise activate fish | source
+mise completion fish > ~/.config/fish/completions/mise.fish
 # https://github.com/ajeetdsouza/zoxide
 mise exec zoxide -- zoxide init fish | source
 # https://github.com/twpayne/chezmoi
 chezmoi completion fish | source
 
+# https://github.com/starship/starship
+starship init fish | source
